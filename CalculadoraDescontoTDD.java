@@ -5,10 +5,7 @@ public class CalculadoraDescontoTDD {
         if (cliente.isVip()) {
             valorFinal = aplicarDescontoVip(valorFinal);
         }
-        if (valorFinal < 100) {
-            valorFinal = valorFinal + 15;
-        }
-        return valorFinal;
+        return aplicarFrete(valorFinal);
     }
 
     private double aplicarDescontoPorFaixa(double valorCompra) {
@@ -23,5 +20,12 @@ public class CalculadoraDescontoTDD {
 
     private double aplicarDescontoVip(double valor) {
         return valor * 0.95;
+    }
+
+    private double aplicarFrete(double valor) {
+        if (valor < 100) {
+            return valor + 15;
+        }
+        return valor;
     }
 }
