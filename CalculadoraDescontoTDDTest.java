@@ -15,4 +15,9 @@ class CalculadoraDescontoTDDTest {
     void compraAte500NaoTemDesconto() {
         assertEquals(500.0, calc.calcularValorFinal(500), 0.01);
     }
+
+    @Test
+    void compraAcimaDe1000Recebe20PorCento() {
+        assertEquals(960.0, calc.calcularValorFinal(1200), 0.01);
+    }
 }
