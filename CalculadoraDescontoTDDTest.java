@@ -27,4 +27,9 @@ class CalculadoraDescontoTDDTest {
     void clienteVipRecebe5PorCentoSobreValorComDesconto() {
         assertEquals(513.0, calc.calcularValorFinal(600, vip), 0.01);
     }
+
+    @Test
+    void compraAbaixoDe100PagaFrete() {
+        assertEquals(65.0, calc.calcularValorFinal(50, comum), 0.01);
+    }
 }
