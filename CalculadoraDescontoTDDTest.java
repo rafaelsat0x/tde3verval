@@ -32,4 +32,10 @@ class CalculadoraDescontoTDDTest {
     void compraAbaixoDe100PagaFrete() {
         assertEquals(65.0, calc.calcularValorFinal(50, comum), 0.01);
     }
+
+    @Test
+    void valorZeradoOuNegativoLancaExcecao() {
+        assertThrows(IllegalArgumentException.class, () -> calc.calcularValorFinal(0, comum));
+        assertThrows(IllegalArgumentException.class, () -> calc.calcularValorFinal(-50, comum));
+    }
 }
