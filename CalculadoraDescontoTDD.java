@@ -1,6 +1,9 @@
 public class CalculadoraDescontoTDD {
 
     public double calcularValorFinal(double valorCompra, Cliente cliente) {
+        if (valorCompra <= 0) {
+            throw new IllegalArgumentException("Valor da compra deve ser maior que zero");
+        }
         double valorFinal = aplicarDescontoPorFaixa(valorCompra);
         if (cliente.isVip()) {
             valorFinal = aplicarDescontoVip(valorFinal);
