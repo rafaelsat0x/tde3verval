@@ -1,6 +1,9 @@
 public class CalculadoraDescontoTDD {
 
     public double calcularValorFinal(double valorCompra) {
-        return valorCompra * 0.9;
+        if (valorCompra > 500) {
+            return valorCompra * 0.9;
+        }
+        return valorCompra;
     }
 }
